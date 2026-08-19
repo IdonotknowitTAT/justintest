@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<string-array name="horoscope_options">
+    <item>1.把握未来</item>
+    <item>2.yes or no</item>
+    <item>3.得失</item>
+    <item>4.进展</item>
+    <item>5.创意</item>
+    <item>6.阻力</item>
+    <item>7.压力、困难、未来</item>
+    <item>8.选择</item>
+    <item>9.了解自己</item>
+    <item>10.命运</item>
+    <item>11.今日事件</item>
+    <item>12.今天的工作</item>
+    <item>13.今天金字塔</item>
+    <item>14.目标</item>
+    <item>15.新机会</item>
+    <item>16.工作</item>
+    <item>17. 合作</item>
+    <item>18.恋爱前景</item>
+    <item>19.自我探索牌阵</item>
+    <item>20.分手</item>
+    <item>21.检验爱情</item>
+    <item>22.关系</item>
+    <item>23.爱已消失</item>
+    <item>24.再见</item>
+    <item>25.金钱</item>
+    <item>26.工作事业牌阵</item>
+    <item>27.一受的爱</item>
+    <item>28.真命天子</item>
+    <item>29.新的恋情</item>
+    <item>30.友谊牌阵</item>
+    <item>31.收获</item>
+    <item>32.健康/幸福牌阵</item>
+
+
+</string-array>
+</resources>
