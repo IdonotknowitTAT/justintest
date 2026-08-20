@@ -88,7 +88,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:hint=""
+            android:hint="请在此输入"
             android:inputType="textPersonName"
             app:layout_constraintEnd_toStartOf="@+id/spinner"
             tools:layout_editor_absoluteY="112dp" />

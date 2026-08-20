@@ -68,7 +68,7 @@ public class GuaGenerator {
     private static String getGuaName(int[] yao) {
         int lowerIndex = getTrigramIndex(yao, 0); // 下卦（初二三）
         int upperIndex = getTrigramIndex(yao, 3); // 上卦（四五六）
-        return GUA_MATRIX[upperIndex][lowerIndex];
+        return GUA_MATRIX[lowerIndex][upperIndex];
     }
     // 将三个爻（6/7/8/9）转换为八卦索引（0~7）
     private static int getTrigramIndex(int[] yao, int start) {
