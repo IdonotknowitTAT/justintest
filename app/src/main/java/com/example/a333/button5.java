@@ -21,7 +21,7 @@ public class button5 implements View.OnClickListener {
         shuruci.append("用户的挂像是");
         shuruci.append("\n");
         for (int i = 0; i <= 5; i++) {
-            a[i]=liuyaodaima.dangeguanxiang();//1
+            a[i]=liuyaodaima.dangeguanxiang();
         }
         shuruci.append(GuaGenerator.getGuaResult(a));
         if(!isallowusseai){
