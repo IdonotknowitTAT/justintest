@@ -56,4 +56,12 @@
         app:layout_constraintStart_toEndOf="@+id/buttonkeepall"
         app:layout_constraintTop_toTopOf="@+id/buttonkeepall" />
 
+    <Switch
+        android:id="@+id/switch_liuyaousedeepseekapi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="是否使用ai解读挂像"
+        app:layout_constraintStart_toStartOf="@+id/switch_showreasoning"
+        app:layout_constraintTop_toBottomOf="@+id/switch_showreasoning" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

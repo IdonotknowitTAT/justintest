@@ -15,6 +15,7 @@ public class SettingsActivity extends AppCompatActivity {
     SharedPreferences apidata;
     EditText deepseekapi;
     Switch switchshowreasoning;
+    Switch switchliuyaousedeepseekapi;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,8 +24,11 @@ public class SettingsActivity extends AppCompatActivity {
         buttonkeep=findViewById(R.id.buttonkeepall);
         deepseekapi=findViewById(R.id.editdeepseekapi);
         switchshowreasoning=findViewById(R.id.switch_showreasoning);
+        switchliuyaousedeepseekapi=findViewById(R.id.switch_liuyaousedeepseekapi);
         apidata=getSharedPreferences("DailyDate",MODE_PRIVATE);
+        deepseekapi.setText(apidata.getString("deepseekapi",""));
         switchshowreasoning.setChecked(apidata.getBoolean("showreasoning",false));
+        switchliuyaousedeepseekapi.setChecked(apidata.getBoolean("useaitoknow",false));
         buttonreturn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -35,12 +39,12 @@ public class SettingsActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 String deepseek=deepseekapi.getText().toString().trim();
-                if(deepseek.isEmpty()){
-                    deepseekapi.setText("请输入api");
-                    return;
+                SharedPreferences.Editor editor=apidata.edit();
+                if(!deepseek.isEmpty()){
+                    editor.putString("deepseekapi",deepseek);
                 }
-                apidata.edit().putString("deepseekapi",deepseek)
-                        .putBoolean("showreasoning",switchshowreasoning.isChecked())
+                editor.putBoolean("showreasoning",switchshowreasoning.isChecked())
+                        .putBoolean("useaitoknow",switchliuyaousedeepseekapi.isChecked())
                         .apply();
             }
         });

@@ -1,4 +1,6 @@
 package com.example.a333;
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -7,6 +9,8 @@ public class button5 implements View.OnClickListener {
     @Override
     public void onClick(View view) {
         int[]a=new int[6];
+        SharedPreferences sp=view.getContext().getSharedPreferences("DailyDate", Context.MODE_PRIVATE);
+        boolean isallowusseai=sp.getBoolean("useaitoknow",false);
         liuyaodaima liuyaodaima = new liuyaodaima();
         EditText editText = view.getRootView().findViewById(R.id.editText);//从根处获取输入框
         TextView textView = view.getRootView().findViewById(R.id.textView);//获取输出框
@@ -20,15 +24,15 @@ public class button5 implements View.OnClickListener {
             a[i]=liuyaodaima.dangeguanxiang();
         }
         shuruci.append(GuaGenerator.getGuaResult(a));
-        shuruci.append("\n");
-        shuruci.append("由于deepseek在识别六爻卦象会消耗大量token");
-        shuruci.append("请自行复制去询问deepseek");
-        shuruci.append("提示词也已经给予");
-        textView.setText(shuruci.toString());
-        /*for(int c=0;c<=5;c++){
-            shuruci.append(liuyaodaima.suangua(liuyaodaima.dangeguanxiang()));
-        }*/
-       /* textView.setText(GuaGenerator.getGuaResult(a));//先显示等待文案
+        if(!isallowusseai){
+            shuruci.append("\n");
+            shuruci.append("由于deepseek在识别六爻卦象会消耗大量token");
+            shuruci.append("请自行复制去询问deepseek");
+            shuruci.append("提示词也已经给予");
+            textView.setText(shuruci.toString());
+
+        }else {
+            textView.setText("✨ 正在生成卦象...");
         new Thread(new Runnable() {//网络请求放到子线程，避免阻塞主线程
             @Override
             public void run() {
@@ -50,6 +54,9 @@ public class button5 implements View.OnClickListener {
                     });
                 }
             }
-        }).start();*/
+        }).start();
+
+        }
+
     }
 }
