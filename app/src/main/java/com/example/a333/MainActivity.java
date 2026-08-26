@@ -102,6 +102,7 @@ public class MainActivity extends AppCompatActivity {
                                 public void run() {
                                     textView.setText(errorMsg);
                                     button1.setEnabled(true);
+                                    button2.setEnabled(true);
                                 }
                             });
                         }
